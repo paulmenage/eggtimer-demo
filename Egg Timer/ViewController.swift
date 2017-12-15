@@ -14,11 +14,36 @@ class ViewController: UIViewController {
     
     var timeRemaining : Int {
         get {
-            return Int(countdown.text!)!
+            return Int(countdown.text!) ?? -1
         }
         set(value) {
+            let oldValue = timeRemaining
+            if (oldValue == value) {
+                return
+            }
             countdown.text = String(value)
             countdown.sizeToFit()
+            if value == 0 {
+                let anim = CABasicAnimation(keyPath: "transform.rotation")
+                anim.fromValue = 0
+                anim.toValue = -Float.pi
+                anim.duration = 0.5
+                anim.isRemovedOnCompletion = false
+                anim.fillMode = kCAFillModeBoth
+                eggTop.layer.add(anim, forKey:"anim")
+            } else if value < 8 {
+                let anim = CABasicAnimation(keyPath: "position.y")
+                anim.isAdditive = true
+                anim.fromValue = 0
+                anim.toValue = -10
+                anim.duration = 0.02
+                anim.repeatCount = .infinity
+                anim.autoreverses = true
+                eggTop.layer.add(anim, forKey: "anim")
+            } else {
+                eggTop.layer.removeAnimation(forKey: "anim")
+            }
+
         }
     }
     
@@ -33,24 +58,6 @@ class ViewController: UIViewController {
             print("a second has passed and \(timeRemaining) is left")
             
             timeRemaining -= 1
-            if timeRemaining == 0 {
-                let anim = CABasicAnimation(keyPath: "transform.rotation")
-                anim.fromValue = 0
-                anim.toValue = -Float.pi
-                anim.duration = 0.5
-                anim.isRemovedOnCompletion = false
-                anim.fillMode = kCAFillModeBoth
-                eggTop.layer.add(anim, forKey:"anim")
-            } else if timeRemaining < 8 {
-                let anim = CABasicAnimation(keyPath: "position.y")
-                anim.isAdditive = true
-                anim.fromValue = 0
-                anim.toValue = -10
-                anim.duration = 0.02
-                anim.repeatCount = .infinity
-                anim.autoreverses = true
-                eggTop.layer.add(anim, forKey: "anim")
-            }
         }
     }
     @IBAction func pause(_ sender: Any) {
