@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Egg Timer/ViewController.swift"
-            timestampString = "535021446.252726"
+            timestampString = "535108405.874502"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "85"
-            endingLineNumber = "85"
+            startingLineNumber = "101"
+            endingLineNumber = "101"
             landmarkName = "play(_:)"
             landmarkType = "7">
          </BreakpointContent>

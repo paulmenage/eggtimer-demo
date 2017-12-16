@@ -10,6 +10,8 @@ import UIKit
 
 class ViewController: UIViewController {
     
+    @IBOutlet weak var chick: UIImageView!
+    
     var timer = Timer()
     
     var timeRemaining : Int {
@@ -23,14 +25,26 @@ class ViewController: UIViewController {
             }
             countdown.text = String(value)
             countdown.sizeToFit()
+            
+        
             if value == 0 {
                 let anim = CABasicAnimation(keyPath: "transform.rotation")
                 anim.fromValue = 0
                 anim.toValue = -Float.pi
-                anim.duration = 0.5
+                anim.duration = 2
                 anim.isRemovedOnCompletion = false
                 anim.fillMode = kCAFillModeBoth
                 eggTop.layer.add(anim, forKey:"anim")
+                
+                let anim2 = CABasicAnimation(keyPath: "position.y")
+                anim2.duration = 2
+                anim2.isAdditive = true
+                anim2.fromValue = 0
+                anim2.toValue = -40
+                anim2.fillMode = kCAFillModeBoth
+                anim2.isRemovedOnCompletion = false
+                chick.layer.add(anim2, forKey:"anim")
+                
             } else if value < 8 {
                 let anim = CABasicAnimation(keyPath: "position.y")
                 anim.isAdditive = true
@@ -40,8 +54,10 @@ class ViewController: UIViewController {
                 anim.repeatCount = .infinity
                 anim.autoreverses = true
                 eggTop.layer.add(anim, forKey: "anim")
+                chick.layer.removeAllAnimations()
             } else {
-                eggTop.layer.removeAnimation(forKey: "anim")
+                eggTop.layer.removeAllAnimations()
+                chick.layer.removeAllAnimations()
             }
 
         }
@@ -157,12 +173,12 @@ class ViewController: UIViewController {
         
         do {
             let p = UIBezierPath()
-            p.move(to: CGPoint(x: 0, y: m2))
-            p.addLine(to: CGPoint(x:w, y:m1))
-            p.addLine(to: CGPoint(x:2*w, y:m2))
-            p.addLine(to: CGPoint(x:3*w, y:m1))
-            p.addLine(to: CGPoint(x:4*w, y:m2))
-            p.addLine(to: CGPoint(x:5*w, y:m1))
+            p.move(to: CGPoint(x: 0, y: m2-1))
+            p.addLine(to: CGPoint(x:w, y:m1-1))
+            p.addLine(to: CGPoint(x:2*w, y:m2-1))
+            p.addLine(to: CGPoint(x:3*w, y:m1-1))
+            p.addLine(to: CGPoint(x:4*w, y:m2-1))
+            p.addLine(to: CGPoint(x:5*w, y:m1-1))
             p.addLine(to: CGPoint(x:6*w, y:h))
             p.addLine(to: CGPoint(x: 0, y: h))
             p.close()
@@ -171,6 +187,7 @@ class ViewController: UIViewController {
             eggBottom.layer.mask = sl
             eggBottom.layer.anchorPoint = eggTop.layer.anchorPoint
         }
+    
         reset(0)
         
     }
