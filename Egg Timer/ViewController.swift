@@ -28,15 +28,16 @@ class ViewController: UIViewController {
             
         
             if value == 0 {
-                let anim = CABasicAnimation(keyPath: "transform.rotation")
+                let anim = CASpringAnimation(keyPath: "transform.rotation")
                 anim.fromValue = 0
                 anim.toValue = -Float.pi
                 anim.duration = 2
+                anim.damping = 100
                 anim.isRemovedOnCompletion = false
                 anim.fillMode = kCAFillModeBoth
                 eggTop.layer.add(anim, forKey:"anim")
                 
-                let anim2 = CABasicAnimation(keyPath: "position.y")
+                let anim2 = CASpringAnimation(keyPath: "position.y")
                 anim2.duration = 2
                 anim2.isAdditive = true
                 anim2.fromValue = 0
@@ -111,9 +112,9 @@ class ViewController: UIViewController {
     
     @IBAction func minusTen(_ sender: Any) {
         
-        if timeRemaining >= 10 {
+        if timeRemaining >= 200 {
         
-        timeRemaining -= 10
+        timeRemaining -= 200
         print("-10 sec and \(timeRemaining) is left")
             
         }
