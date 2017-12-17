@@ -7,12 +7,15 @@
 //
 
 import UIKit
+import AVFoundation
 
 class ViewController: UIViewController {
     
     @IBOutlet weak var chick: UIImageView!
     
     var timer = Timer()
+    
+    var alarmSoundEffect: AVAudioPlayer!
     
     var timeRemaining : Int {
         get {
@@ -45,6 +48,21 @@ class ViewController: UIViewController {
                 anim2.fillMode = kCAFillModeBoth
                 anim2.isRemovedOnCompletion = false
                 chick.layer.add(anim2, forKey:"anim")
+                
+                
+                let path = Bundle.main.path(forResource: "zapsplat_cartoon_blink_flutter_mallet_002_12654.mp3", ofType: nil)
+                
+                let url = URL(fileURLWithPath: path!)
+                
+                do {
+                    alarmSoundEffect = try AVAudioPlayer(contentsOf: url)
+                    alarmSoundEffect!.play()
+                    print("sound plays")
+                    
+                } catch {
+                    print("error loading file")
+                }
+                
                 
             } else if value < 8 {
                 let anim = CABasicAnimation(keyPath: "position.y")
