@@ -49,7 +49,8 @@ class ViewController: UIViewController {
                 anim2.isRemovedOnCompletion = false
                 chick.layer.add(anim2, forKey:"anim")
                 
-                
+          
+                #if false
                 let path = Bundle.main.path(forResource: "zapsplat_cartoon_blink_flutter_mallet_002_12654.mp3", ofType: nil)
                 
                 let url = URL(fileURLWithPath: path!)
@@ -62,7 +63,7 @@ class ViewController: UIViewController {
                 } catch {
                     print("error loading file")
                 }
-                
+                #endif
                 
             } else if value < 8 {
                 let anim = CABasicAnimation(keyPath: "position.y")

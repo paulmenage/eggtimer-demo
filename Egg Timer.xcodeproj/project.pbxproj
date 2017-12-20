@@ -15,7 +15,6 @@
 		FF9031E61FD0799600A53A39 /* Egg_TimerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9031E51FD0799600A53A39 /* Egg_TimerTests.swift */; };
 		FF9031F11FD0799600A53A39 /* Egg_TimerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9031F01FD0799600A53A39 /* Egg_TimerUITests.swift */; };
 		FF9A83CC1FE4FE6E00E03356 /* 11509-baby-chick.png in Resources */ = {isa = PBXBuildFile; fileRef = FF9A83CB1FE4FE6E00E03356 /* 11509-baby-chick.png */; };
-		FF9A83D01FE64E8600E03356 /* zapsplat_cartoon_blink_flutter_mallet_002_12654.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FF9A83CF1FE64E8600E03356 /* zapsplat_cartoon_blink_flutter_mallet_002_12654.mp3 */; };
 		FFAD8A671FE3AFDA00706784 /* egg.png in Resources */ = {isa = PBXBuildFile; fileRef = FFAD8A661FE3AFDA00706784 /* egg.png */; };
 /* End PBXBuildFile section */
 
@@ -51,7 +50,6 @@
 		FF9031F01FD0799600A53A39 /* Egg_TimerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Egg_TimerUITests.swift; sourceTree = "<group>"; };
 		FF9031F21FD0799600A53A39 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FF9A83CB1FE4FE6E00E03356 /* 11509-baby-chick.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "11509-baby-chick.png"; path = "../../11509-baby-chick.png"; sourceTree = "<group>"; };
-		FF9A83CF1FE64E8600E03356 /* zapsplat_cartoon_blink_flutter_mallet_002_12654.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = zapsplat_cartoon_blink_flutter_mallet_002_12654.mp3; path = ../../../Downloads/zapsplat_cartoon_blink_flutter_mallet_002_12654.mp3; sourceTree = "<group>"; };
 		FFAD8A661FE3AFDA00706784 /* egg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = egg.png; path = ../../egg.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -108,7 +106,6 @@
 				FF9031D41FD0799600A53A39 /* Main.storyboard */,
 				FF9A83CB1FE4FE6E00E03356 /* 11509-baby-chick.png */,
 				FF9031D71FD0799600A53A39 /* Assets.xcassets */,
-				FF9A83CF1FE64E8600E03356 /* zapsplat_cartoon_blink_flutter_mallet_002_12654.mp3 */,
 				FFAD8A661FE3AFDA00706784 /* egg.png */,
 				FF9031D91FD0799600A53A39 /* LaunchScreen.storyboard */,
 				FF9031DC1FD0799600A53A39 /* Info.plist */,
@@ -244,7 +241,6 @@
 				FF9031DB1FD0799600A53A39 /* LaunchScreen.storyboard in Resources */,
 				FFAD8A671FE3AFDA00706784 /* egg.png in Resources */,
 				FF9A83CC1FE4FE6E00E03356 /* 11509-baby-chick.png in Resources */,
-				FF9A83D01FE64E8600E03356 /* zapsplat_cartoon_blink_flutter_mallet_002_12654.mp3 in Resources */,
 				FF9031D81FD0799600A53A39 /* Assets.xcassets in Resources */,
 				FF9031D61FD0799600A53A39 /* Main.storyboard in Resources */,
 			);
